@@ -3,7 +3,7 @@ import model.*;
 import strategy.*;
 import util.GroupLoader;
 
-public class App {
+public class Main {
     public static void main(String[] args) {
         List<Group> groups = GroupLoader.loadGroups("data/groups.csv");
 
