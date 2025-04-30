@@ -1,9 +1,8 @@
 package strategy;
 
+import java.util.*;
 import model.Group;
 import model.Vehicle;
-
-import java.util.*;
 
 public class BestFit implements BinPackingStrategy {
     @Override
@@ -25,7 +24,7 @@ public class BestFit implements BinPackingStrategy {
             if (bestFit != null) {
                 bestFit.assignGroup(group);
             } else {
-                System.out.println("Group " + group.getGroupId() + " could not be assigned.");
+                System.out.println(group.getGroupId() + " could not be assigned.");
             }
         }
 

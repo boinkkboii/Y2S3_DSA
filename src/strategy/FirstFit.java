@@ -1,16 +1,17 @@
 package strategy;
 
+import java.util.*;
 import model.Group;
 import model.Vehicle;
-
-import java.util.*;
 
 public class FirstFit implements BinPackingStrategy {
     @Override
     public ArrayList<Vehicle> pack(List<Group> groups, ArrayList<Vehicle> emptyVehicles) {
-        groups.sort((a, b) -> b.getGroupSize() - a.getGroupSize());
+        PriorityQueue<Group> groupQueue = new PriorityQueue<>();
+        groupQueue.addAll(groups);
 
-        for (Group group : groups) {
+        while (!groupQueue.isEmpty()) {
+            Group group = groupQueue.poll();
             boolean placed = false;
             for (Vehicle v : emptyVehicles) {
                 if (v.canFit(group)) {

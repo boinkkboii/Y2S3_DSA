@@ -40,12 +40,16 @@ public abstract class Vehicle {
 
     @Override
     public String toString() {
-        String output = vehicleId + " [" + (capacity - remainingCapacity) + "/" + capacity + "] ";
-
+        String output = vehicleId + " [" + (capacity - remainingCapacity) + "/" + capacity + "] \n";
+        int count = 0;
         for (Group group : assignedGroups) {
-            output += "[" + group.getGroupId() + "(" + group.getGroupSize() + ")] ";
+            output += group.getGroupId() + "(" + group.getGroupSize() + ") ";
+                count++;
+            if (count % 5 == 0) {
+                output += "\n";
+            }
         }
 
-        return output.trim();
+        return output.trim() + "\n";
     }
 }
