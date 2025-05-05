@@ -16,14 +16,16 @@ public abstract class Vehicle {
     }
 
     public boolean canFit(Group group) {
-        return group.getGroupSize() <= remainingCapacity;
+        return group.getSize() <= remainingCapacity;
     }
 
-    public void assignGroup(Group group) {
-        if (canFit(group)) {
+    public boolean assignGroup(Group group) {
+        if (remainingCapacity >= group.getSize()) {
             assignedGroups.add(group);
-            remainingCapacity -= group.getGroupSize();
+            remainingCapacity -= group.getSize();
+            return true;
         }
+        return false;
     }
 
     public List<Group> getAssignedGroups() {
@@ -32,6 +34,10 @@ public abstract class Vehicle {
 
     public String getVehicleId() {
         return vehicleId;
+    }
+
+    public int getCapacity () {
+        return capacity;
     }
 
     public int getRemainingCapacity() {
@@ -43,7 +49,7 @@ public abstract class Vehicle {
         String output = vehicleId + " [" + (capacity - remainingCapacity) + "/" + capacity + "] \n";
         int count = 0;
         for (Group group : assignedGroups) {
-            output += group.getGroupId() + "(" + group.getGroupSize() + ") ";
+            output += group.getId() + "(" + group.getSize() + ") ";
                 count++;
             if (count % 5 == 0) {
                 output += "\n";

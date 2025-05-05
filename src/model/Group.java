@@ -9,11 +9,11 @@ public class Group implements Comparable<Group> {
         this.groupSize = groupSize;
     }
 
-    public String getGroupId() {
+    public String getId() {
         return groupId;
     }
 
-    public int getGroupSize() {
+    public int getSize() {
         return groupSize;
     }
 
@@ -24,6 +24,6 @@ public class Group implements Comparable<Group> {
 
     @Override
     public int compareTo(Group other) {
-        return Integer.compare(other.getGroupSize(), this.getGroupSize()); // Max heap
+        return Integer.compare(other.getSize(), this.getSize()); // Max heap
     }
 }

@@ -21,7 +21,7 @@ public class FirstFit implements BinPackingStrategy {
                 }
             }
             if (!placed) {
-                System.out.println("Group " + group.getGroupId() + " could not be assigned.");
+                System.out.println("Group " + group.getId() + " could not be assigned.");
             }
         }
 

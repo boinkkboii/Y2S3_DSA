@@ -13,7 +13,7 @@ public class BestFit implements BinPackingStrategy {
 
             for (Vehicle v : emptyVehicles) {
                 if (v.canFit(group)) {
-                    int remaining = v.getRemainingCapacity() - group.getGroupSize();
+                    int remaining = v.getRemainingCapacity() - group.getSize();
                     if (remaining < minRemaining) {
                         minRemaining = remaining;
                         bestFit = v;
@@ -24,7 +24,7 @@ public class BestFit implements BinPackingStrategy {
             if (bestFit != null) {
                 bestFit.assignGroup(group);
             } else {
-                System.out.println(group.getGroupId() + " could not be assigned.");
+                System.out.println(group.getId() + " could not be assigned.");
             }
         }
 
