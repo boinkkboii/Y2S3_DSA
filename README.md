@@ -17,21 +17,21 @@ This project is a Java application designed to simulate the allocation of groups
 - Extendable architecture for future strategies or transport types.
 
 # File Structure
-Y2S3_DSA-main/
-│
-├── data/
-│   └── groups.csv                 # Input data for group sizes
-│
-├── src/                           # Source code
-│   ├── Main.java                  # Entry point
-│   ├── model/                     # Entity classes (Bus, Train, Group, Vehicle)
-│   ├── strategy/                  # Bin packing strategy implementations
-│   └── util/                      # Utility classes (e.g., GroupLoader)
-│
-├── bin/                           # Compiled class files
-├── .vscode/                       # VS Code settings
-├── .gitignore
-└── README.md
+<pre>Y2S3_DSA-main/ 
+  │ 
+  ├── data/ 
+  │ └── groups.csv           # Input data for group sizes 
+  │ 
+  ├── src/                   # Source code 
+  │ ├── Main.java            # Entry point 
+  │ 
+  ├── model/                 # Entity classes (Bus, Train, Group, Vehicle) 
+  │ ├── strategy/            # Bin packing strategy implementations 
+  │ └── util/                # Utility classes (e.g., GroupLoader) 
+  │ ├── bin/                 # Compiled class files 
+  ├── .vscode/               # VS Code settings 
+  ├── .gitignore 
+  └── README.md </pre>
 
 # How to Run
 **Requirements**
@@ -39,9 +39,9 @@ Y2S3_DSA-main/
 - IDE such as VS Code, IntelliJ IDEA, or use command-line tools
 
 **Compile and Run from Terminal**
-- cd Y2S3_DSA-main/src
-- javac Main.java model/*.java strategy/*.java util/*.java
-- java Main
+<pre>cd Y2S3_DSA-main/src
+javac Main.java model/*.java strategy/*.java util/*.java
+java Main</pre>
 
 **Run in Visual Studio Code**
 1. Open the Y2S3_DSA-main folder in VS Code.
@@ -52,10 +52,11 @@ Y2S3_DSA-main/
 # Input File Format
 The file data/groups.csv contains a list of group sizes to be allocated. Modify this file to test different scenarios.
 
-Sample groups.csv
-Group1,5
-Group2,10
-Group3,8
+Sample of groups.csv
+- Group1,5
+- Group2,10
+- Group3,8
+
 Each line defines a group name and the number of members.
 
 # Design Overview
@@ -66,7 +67,7 @@ Each line defines a group name and the number of members.
 
 # Strategies Implemented
 **First Fit**
-Allocates each group into the first vehicle with sufficient remaining capacity.
+- Allocates each group into the first vehicle with sufficient remaining capacity.
 
 **Best Fit**
-Allocates each group into the vehicle that would have the least leftover space after allocation.
+- Allocates each group into the vehicle that would have the least leftover space after allocation.
