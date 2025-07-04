@@ -34,16 +34,16 @@ Y2S3_DSA-main/
 └── README.md
 
 # How to Run
-Requirements
+**Requirements**
 - Java Development Kit (JDK) 8 or higher
 - IDE such as VS Code, IntelliJ IDEA, or use command-line tools
 
-# - Compile and Run from Terminal
+**Compile and Run from Terminal**
 - cd Y2S3_DSA-main/src
 - javac Main.java model/*.java strategy/*.java util/*.java
 - java Main
-- 
-# - Run in Visual Studio Code
+
+**Run in Visual Studio Code**
 1. Open the Y2S3_DSA-main folder in VS Code.
 2. Ensure the Java extension is installed.
 3. Open Main.java.
@@ -65,8 +65,8 @@ Each line defines a group name and the number of members.
 - util/GroupLoader: Reads and parses the input CSV file into Group objects.
 
 # Strategies Implemented
-# First Fit
+**First Fit**
 Allocates each group into the first vehicle with sufficient remaining capacity.
 
-# Best Fit
+**Best Fit**
 Allocates each group into the vehicle that would have the least leftover space after allocation.
